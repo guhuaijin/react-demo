@@ -7,7 +7,7 @@ class Home extends Component {
 	    super(props,context);
 	}
     render() {
-        return (<div>主页</div>)
+        return (<div>'/' 默认是home页面</div>)
     }
 }
 

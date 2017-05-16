@@ -5,7 +5,8 @@ import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory} from 'react
 import Roots from './components/root'
 import home from './views/home'
 
-const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+// const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
+const history = hashHistory;
 
 
 const index  = (location,cb) => {

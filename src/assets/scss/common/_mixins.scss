@@ -1,0 +1,143 @@
+@charset 'utf-8';
+//base
+$baseWidthSize: 64 !default;
+
+@function to($px) {
+  @return $px / $baseWidthSize * 1rem;
+}
+
+@mixin bg($url, $type:null, $size:100% 100%, $pos:center center, $re:no-repeat) {
+    @if not $type {
+        background-image: url(./assets/images/#{$url}.png);
+    }
+    @else if $type {
+        background-image: url(./assets/images/#{$url}.jpg);
+    }
+    background-size: $size;
+    background-position: $pos;
+    background-repeat: $re;
+}
+
+
+@mixin wh( $w, $h) {
+    width: to($w);
+    height: to($h);
+}
+
+@mixin slh {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin font($s, $c:null, $p:null) {
+    font-size: to($s);
+    color: $c;
+    text-align: $p;
+}
+
+@mixin slh-two($num:2) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+
+@mixin pc($width: null, $height: null) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @if not $width and not $height {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    @else if $width and $height {
+        width: to($width);
+        height: to($height);
+        margin-top: to(-$height / 2);
+        margin-left: to(-$width / 2);
+    }
+}
+
+// flex -> flex-grow
+//      -> flex-shrink
+//      -> flex-basis
+@mixin f {
+    display: flex;
+    // display: -webkit-box;
+    // display: box;
+}
+
+@mixin fs($scale:1) {
+    flex: $scale;
+    // box-flex: $scale;
+}
+
+// align-items -> flex-start
+//             -> flex-end
+//             -> center
+//             -> baseline
+//             -> strecth
+// box-align: $old;
+@mixin fv($vertical:center) {
+    align-items: $vertical;
+}
+
+// justify-content -> flex-start
+//                 -> flex-end
+//                 -> center
+//                 -> space-between
+//                 -> space-around
+// box-pack: $old;
+@mixin fl($level:center) {
+    justify-content: $level;
+}
+
+// flex-direction -> row
+//                -> row-reverse
+//                -> column
+//                -> column-reverse
+@mixin fd($direction:row) {
+    flex-direction: $direction;
+}
+
+// flex-wrap -> wrap
+//           -> wrap-reverse
+@mixin fw($wrap:wrap-reverse) {
+    flex-wrap: $wrap;
+}
+
+// align-content -> flex-start
+//               -> flex-end
+//               -> center
+//               -> space-between
+//               -> space-around
+//               -> strecth
+@mixin fac($ac:flex-start) {
+    align-content: $ac;
+}
+
+@mixin cross( $w, $h, $bgc ) {
+
+    &:after {
+        content: '';
+        width: $w;
+        height: $h;
+        background-color: $bgc;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    &:before {
+        content: '';
+        width: $h;
+        height: $w;
+        background-color:$bgc;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+}

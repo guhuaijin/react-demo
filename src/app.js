@@ -1,3 +1,8 @@
+
+import 'lib-flexible'
+
+import 'assets/scss/main.scss'
+
 import React,{Component} from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
