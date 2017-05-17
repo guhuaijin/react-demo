@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './detail.scss'
 
 
-class Index extends Component {
+class Detail extends Component {
 	constructor(props,context){
 	    super(props,context);
 	}
     render() {
-        return (<div>首页</div>)
+        return (<div className="detail">详情</div>)
     }
 }
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index)
+export default connect(mapStateToProps, mapDispatchToProps)(Detail)

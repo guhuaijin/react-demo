@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './home.scss'
 
 
-class Center extends Component {
+class Home extends Component {
 	constructor(props,context){
 	    super(props,context);
 	}
     render() {
-        return (<div>个人中心</div>)
+        return (<div className="home">'/' 默认是home页面</div>)
     }
 }
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Center)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Roots extends Component {
 
@@ -16,11 +17,11 @@ class Roots extends Component {
     render() {
         return (
 	       	<div className="container">
-		        <div className="content">
-		        	//this.props.children 表示组件的所有子节点
-		        	{ this.props.children }
-		        	{ this.props.title }
-		        </div>
+                <ReactCSSTransitionGroup component="div" className="content" transitionName="carousel1" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+    		        <div key={this.props.location.pathname}>
+    		        	{ this.props.children }
+    		        </div>
+                </ReactCSSTransitionGroup>
 		        <ul className="footer">
 		         	<li><Link to="/home">主页</Link></li>
 		        	<li><Link to="/index">首页</Link></li>

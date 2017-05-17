@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import './index.scss'
 
 
-class Home extends Component {
+class Index extends Component {
 	constructor(props,context){
 	    super(props,context);
 	}
     render() {
-        return (<div>'/' 默认是home页面</div>)
+        return (<div className="index">首页</div>)
     }
 }
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Index)

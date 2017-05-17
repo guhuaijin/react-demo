@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import './center.scss'
 
-class Detail extends Component {
+class Center extends Component {
 	constructor(props,context){
 	    super(props,context);
 	}
     render() {
-        return (<div>详情</div>)
+        return (<div className="center">个人中心</div>)
     }
 }
 
@@ -22,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail)
+export default connect(mapStateToProps, mapDispatchToProps)(Center)

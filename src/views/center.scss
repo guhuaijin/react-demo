@@ -1,0 +1,10 @@
+@import '../assets/scss/common/_mixins.scss';
+
+.center{
+	color:red;
+	font-size: to(42);
+	background-color:#000;
+	position: absolute;
+	top:0;
+	left:0;
+}
