@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
-import homeState from './home'
+import locationState from './location'
 
 
 export default combineReducers({
-	homeState
+	locationState
 })
