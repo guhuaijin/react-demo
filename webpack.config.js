@@ -1,5 +1,9 @@
 const path = require('path');
+var rm = require('rimraf')
+
+
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 var pkg = require('./package.json');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -15,9 +19,9 @@ module.exports = {
         vendor: vendor
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, './dist/js'),
         filename: '[name].js',
-        publicPath: '/dist/'
+        publicPath: process.env.NODE_ENV === 'production' ? 'http://1251097942.cdn.myqcloud.com/1251097942/platform/fybk/' : 'http://192.168.10.118:8082/'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.scss'],
@@ -71,17 +75,55 @@ module.exports = {
     ]
 };
 
+if (process.env.NODE_ENV === 'development') {
+   
+    module.exports.devtool = '#cheap-module-eval-source-map'
+
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: '"development"'
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'index.html',
+            inject: true
+        })
+    ])
+
+}
+
+
 if (process.env.NODE_ENV === 'production') {
+
+    rm(path.resolve(__dirname, './dist'), err => {})
+
+
     module.exports.devtool = '#source-map'
-    // http://vue-loader.vuejs.org/en/workflow/production.html
+        // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
             }
         }),
+        new HtmlWebpackPlugin({
+            filename: path.resolve(__dirname, './dist/index.html'),
+            template: './index.html',
+            inject: true,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeAttributeQuotes: false
+                    // more options:
+                    // https://github.com/kangax/html-minifier#options-quick-reference
+            },
+            // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+            chunksSortMode: 'dependency'
+        }),
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
+            sourceMap: false,
             compress: {
                 warnings: false
             }
