@@ -24,7 +24,7 @@ class Home extends Component {
 
   		for(let item of list){
   			str.push(
-  				<div key={++_key}>{item.title}</div>
+  				<div className="item" key={++_key}>{item.title}</div>
   			)
   		}
 		
