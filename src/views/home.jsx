@@ -15,8 +15,9 @@ class Home extends Component {
     }
     renderList() {
 
+
   		const { list } = this.props;
-  		
+
   		if(list.length == 0) return;
 
   		let str = [];
@@ -31,7 +32,6 @@ class Home extends Component {
 	
     }
     render() {
-
     	let listStr = this.renderList();
 
         return (<div>{listStr}</div>)
