@@ -1,15 +1,21 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+
+
+
 import './center.scss'
 
 class Center extends Component {
 	constructor(props,context){
 	    super(props,context);
+
+
 	}
     render() {
-        return (<div className="center">个人中心</div>)
+        return (<div className="center">个人中心123</div>)
     }
+   
 }
 
 

@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+
+
+
 class Roots extends Component {
 
 	static defaultProps = {
@@ -11,6 +14,7 @@ class Roots extends Component {
 
 	constructor(props,context){
 	    super(props,context);
+
 	} 
 	componentWillMount(){   //会在首次渲染之前调用一次，
 	}  
@@ -34,7 +38,7 @@ class Roots extends Component {
     //真实的DOM被渲染出来后调用，在该方法中可通过this.getDOMNode()访问到真实的DOM元素。此时已可以使用其他类库来操作这个DOM。
     //在服务端中，该方法不会被调用。
     componentDidMount(){  
-    	console.log(this.props)
+    	console.log('root this.props:', this.props)
     }
     //组件接收到新的props时调用，并将其作为参数nextProps使用，此时可以更改组件props及state
     componentWillReceiveProps(nextProps){  

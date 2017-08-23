@@ -11,7 +11,8 @@ class Home extends Component {
         super(props, context);
     }
     componentDidMount() {
-        this.props.actions.fetchLocationLsit(() => {})
+        this.props.actions.fetchLocationLsit(() => {});
+        console.log('home this',this);
     }
     renderList() {
 
@@ -46,7 +47,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        actions: bindActionCreators(actions, dispatch)
+        actions: bindActionCreators(actions, dispatch),
+        test:'我就是测试玩的'
     }
 }
 

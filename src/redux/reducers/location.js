@@ -7,6 +7,7 @@ const initialState = {
 export default function locationState(state = initialState, action) {
     switch (action.type) {
         case types.GET_LOCATION_LIST:
+        	console.log(1111111111);
             return Object.assign({}, state, {
                 list: action.data
             })

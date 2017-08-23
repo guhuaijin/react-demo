@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 
-import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory} from 'react-router'
+import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory, withRouter } from 'react-router'
 
 import Roots from './components/root'
 import home from './views/home'
@@ -27,14 +27,26 @@ const center  = (location,cb) => {
 	},'center')
 }
 
+/**
+ *	路由钩子函数，进入相应页面时触发；
+ * 	这里可以对用户，做权限管理的判断
+ * 
+ */
+const auth = (nextState, replace) => {
+   	console.log('nextState:', nextState);
+   	console.log('replace:', replace);
+
+   	//replace({ pathname: '/center', query:{id:123} })
+}
+
 const RouteConfig = (
-	<Router history={history}>
-		<Route path='/' component={Roots}>
+	<Router history={history} >
+		<Route path='/' component={Roots} >
 			<IndexRoute component={home} />
-			<Route path='home' component={home} />
-			<Route path='index' getComponent={index} />
-			<Route path='detail' getComponent={detail} />
-			<Route path='center' getComponent={center} />
+			<Route path='home' component={home} onEnter={auth}/>
+			<Route path='index' getComponent={index} onEnter={auth}/>
+			<Route path='detail' getComponent={detail} onEnter={auth}/>
+			<Route path='center' getComponent={center}/>
 			<Redirect from='*' to='/' />
 		</Route>
 	</Router>
