@@ -8,7 +8,9 @@ import home from './views/home'
 // const history = process.env.NODE_ENV !== 'production' ? browserHistory : hashHistory;
 const history = hashHistory;
 
-
+/**
+ * 异步加载
+ */
 const index  = (location,cb) => {
 	require.ensure([],require => {
 		cb(null,require('./views/index').default)
