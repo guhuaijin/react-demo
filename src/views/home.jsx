@@ -28,7 +28,7 @@ class Home extends Component {
   			)
   		}
 		
-		  return str;
+		return str;
 	
     }
     render() {
