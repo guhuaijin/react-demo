@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 192.168.10.118 --port 8082 --open --inline --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 192.168.0.100 --port 8082 --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "",
@@ -18,7 +18,8 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.0",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

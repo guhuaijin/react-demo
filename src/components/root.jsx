@@ -22,16 +22,8 @@ class Roots extends Component {
         return (
 	       	<div className="container">
                 <ReactCSSTransitionGroup component="div" className="content" transitionName="carousel1" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-    		        <div key={this.props.location.pathname}>
     		        	{ this.props.children }
-    		        </div>
                 </ReactCSSTransitionGroup>
-		        <ul className="footer">
-		         	<li><Link to="/home">主页</Link></li>
-		        	<li><Link to="/index">首页</Link></li>
-		         	<li><Link to="/detail">详情</Link></li>
-		         	<li><Link to="/center">个人中心</Link></li>
-		        </ul>
 			</div>
         )
     }

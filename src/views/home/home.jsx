@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import './home.scss'
-import * as actions from '../redux/actions/location'
+import * as actions from '../../redux/actions/location'
 
 let _key = 0;
 
@@ -12,10 +12,9 @@ class Home extends Component {
     }
     componentDidMount() {
         this.props.actions.fetchLocationLsit(() => {});
-        console.log('home this',this);
+        // console.log('home this',this);
     }
     renderList() {
-
 
   		const { list } = this.props;
 
@@ -25,17 +24,23 @@ class Home extends Component {
 
   		for(let item of list){
   			str.push(
-  				<div className="item" key={++_key}>{item.title}</div>
+
+          <div className="item" key={++_key}>
+            <img className="item-image" src={item.image} />
+            <div className="item-title">{item.title}</div>
+            <div className="item-summary">{item.summary}</div>
+          </div>
+          
   			)
   		}
 		
-		return str;
+		  return str;
 	
     }
     render() {
     	let listStr = this.renderList();
 
-        return (<div>{listStr}</div>)
+      return (<div className="wrap">{listStr}</div>)
     }
 }
 

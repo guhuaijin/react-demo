@@ -2,35 +2,35 @@
     height: 100%;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    .content {
-        background-color: #fff;
-        flex: 1;
-        overflow:auto;
-    }
-    ul.footer {
-        height: to(88);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-top: 1px solid #ccc;
-        li {
-            overflow: hidden;
-            flex: 1;
-            height: 100%;
-            a {
-                width: 100%;
-                height: 100%;
-                display: inline-block;
-                text-align: center;
-                line-height: to(88);
-            }
-        }
-    }
-}
+// .container {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100%;
+//     .content {
+//         background-color: #fff;
+//         flex: 1;
+//         overflow:auto;
+//     }
+//     ul.footer {
+//         height: to(88);
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         border-top: 1px solid #ccc;
+//         li {
+//             overflow: hidden;
+//             flex: 1;
+//             height: 100%;
+//             a {
+//                 width: 100%;
+//                 height: 100%;
+//                 display: inline-block;
+//                 text-align: center;
+//                 line-height: to(88);
+//             }
+//         }
+//     }
+// }
 
 .example-enter {
     transform:translate3d(100%,0,0);

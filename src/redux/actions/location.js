@@ -5,7 +5,7 @@ import api from '../api'
 function getLocationList(res){
 	return {
 		type:types.GET_LOCATION_LIST,
-		data:res.list
+		data:res.books
 	}
 }
 

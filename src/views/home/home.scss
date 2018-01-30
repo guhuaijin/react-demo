@@ -1,0 +1,54 @@
+@import '../../assets/scss/common/_mixins.scss';
+.item {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+    padding: to(25) to(30) to(25) to(160);
+    min-height: to(180);
+    &:active {
+        background-color: #ebebeb;
+    }
+    .item-image {
+        width: to(101);
+        height: to(146);
+        position: absolute;
+        left: to(30);
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+    .item-title {
+        font-size: to(30);
+        line-height: to(42);
+        color: #000;
+        padding-bottom: to(10);
+        padding-top: to(10);
+        max-width: to(450);
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        word-wrap: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+    } // .item-price {
+    //     font-size: to(28);
+    //     line-height: to(32);
+    //     text-overflow: ellipsis;
+    //     white-space: nowrap;
+    //     word-wrap: normal;
+    //     word-wrap: break-word;
+    //     word-break: break-all;
+    // }
+    .item-summary {
+        color: #999999;
+        line-height: to(28);
+        font-size: to(26);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+}

@@ -7,10 +7,23 @@ const initialState = {
 export default function locationState(state = initialState, action) {
     switch (action.type) {
         case types.GET_LOCATION_LIST:
-        	console.log(1111111111);
-            return Object.assign({}, state, {
-                list: action.data
-            })
+
+        	let { data } = action;
+        	let list = [];
+
+        	if( data && data.length > 0 ){
+        		list = data.map((item)=>{
+        			return {
+        				summary: item.summary,
+        				title: item.title,
+        				image: item.image,
+        				price: item.price
+        			}
+        		})
+        	}
+
+        	console.log(list);
+            return Object.assign({}, state, {list});
         default:
             return state;
     }
