@@ -21,7 +21,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist/js'),
         filename: '[name].js',
-        publicPath: process.env.NODE_ENV === 'production' ? './js' : 'http://192.168.0.100:8082/'
+        publicPath: process.env.NODE_ENV === 'production' ? './js' : 'http://192.168.200.160:8082/'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.scss'],

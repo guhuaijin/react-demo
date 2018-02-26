@@ -51,6 +51,8 @@ const RouteConfig = (
 	</Router>
 )
 
+console.log(RouteConfig)
+
 export default RouteConfig
 
 
