@@ -6,6 +6,8 @@ import * as actions from '../../redux/actions/location'
 import mixin from '../../utils/mixin'
 
 // console.log(Component);
+// console.log(actions);
+//
 
 let _key = 0;
 
@@ -24,11 +26,14 @@ class Home extends Component {
         
         this.testAsyncFn();
 
-        this.test()
+        this.test();
+
+
+        console.log('this.props:', this.props)
       
     }
 
-     testAsyncFn = async () =>{
+    testAsyncFn = async () =>{
 
         // console.log(3333)
 

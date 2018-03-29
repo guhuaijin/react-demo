@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 192.168.200.160 --port 8082 --open --inline --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --host 192.168.201.36 --port 8083 --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    
     "axios": "^0.16.2",
     "lib-flexible": "^0.3.2",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
+    "react-document-title": "^2.0.3",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^3.0.0",
@@ -24,6 +26,7 @@
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-import": "^1.6.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

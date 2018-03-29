@@ -1,0 +1,19 @@
+.box{
+    width:100%;
+    position: relative;
+    height: 50px;
+    border:1px solid red;
+    font-size: 18px;
+    color:#323232;
+    line-height: 50px;
+}
+
+.botton{
+    font-size: 24px;
+    line-height: 40px;
+    width: 100px;
+    background-color:#ccc;
+    display: inline-block;
+    margin:10px 10px 10px;
+    text-align: center;
+}

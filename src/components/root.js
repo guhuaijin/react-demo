@@ -14,7 +14,6 @@ class Roots extends Component {
 
 	constructor(props,context){
 	    super(props,context);
-
 	} 
 	componentWillMount(){   //会在首次渲染之前调用一次，
 	}  

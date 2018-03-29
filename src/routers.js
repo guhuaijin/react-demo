@@ -1,6 +1,6 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
-import {Router,Route,Redirect,IndexRoute,browserHistory,hashHistory, withRouter } from 'react-router'
+import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory, withRouter } from 'react-router'
 
 import Roots from './components/root'
 import home from './views/home/home'
@@ -23,11 +23,17 @@ const history = hashHistory;
 // 	},'detail')
 // }
 
-// const center  = (location,cb) => {
-// 	require.ensure([],require => {
-// 		cb(null,require('./views/center').default)
-// 	},'center')
-// }
+const antd = (location, cb) => {
+	require.ensure([], require => {
+		cb(null, require('./views/antd/index').default)
+	}, 'antd')
+}
+
+const marquee = (location, cb) => {
+	require.ensure([], require => {
+		cb(null, require('./views/marquee/index').default)
+	}, 'marquee')
+}
 
 /**
  *	路由钩子函数，进入相应页面时触发；
@@ -37,7 +43,6 @@ const history = hashHistory;
 // const auth = (nextState, replace) => {
 //    	console.log('nextState:', nextState);
 //    	console.log('replace:', replace);
-
 //    	//replace({ pathname: '/center', query:{id:123} })
 // }
 
@@ -45,13 +50,13 @@ const RouteConfig = (
 	<Router history={history} >
 		<Route path='/' component={Roots} >
 			<IndexRoute component={home} />
-			<Route path='home' component={home}/>
+			<Route path='home' component={home} />
+			<Route path='antd' getComponent={antd} />
+			<Route path='marquee' getComponent={marquee} />
 			<Redirect from='*' to='/' />
 		</Route>
 	</Router>
-)
-
-console.log(RouteConfig)
+);
 
 export default RouteConfig
 
