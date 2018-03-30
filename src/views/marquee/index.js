@@ -8,33 +8,55 @@ class MarqueePage extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            loop: false,
             loopData: [{ txt: "这是一条数据1" }, { txt: "这是一条数据2" }, { txt: "这是一条数据3" }, { txt: "这是一条数据4" }]
         }
     }
     render() {
-        let { loop, loopData } = this.state;
+        let { loopData } = this.state;
         return (
             <div>
-                <div className="box">
-                    <Marquee loop={loop} loopData={loopData} getMarquee={this.getMarquee} />
+                <div className="type-title">默认横向滚动</div>
+                <div className="box-landscape">
+                    <Marquee loopData={loopData} getMarquee={this.getLandscapeMarquee} />
                 </div>
-                <div className="botton" onClick={this.runMarquee}>运动</div>
-                <div className="botton" onClick={this.stopMarquee}>暂停</div>
+                <div className="botton" onClick={this.runlandscapeMarquee}>运动</div>
+                <div className="botton" onClick={this.stoplandscapeMarquee}>暂停</div>
+
+
+                <div className="type-title">竖向滚动</div>
+                <div className="box-vertical">
+                    <Marquee loopData={loopData} getMarquee={this.getVerticalMarquee} direction='vertical' verticalItemHeight='60px'/>
+                </div>
+                <div className="botton" onClick={this.runVerticalMarquee}>运动</div>
+                <div className="botton" onClick={this.stopVerticalMarquee}>暂停</div>
             </div>
         )
     }
 
-    getMarquee = (params) => {
-        this.marqueeParams = params
+    // 横向
+    getLandscapeMarquee = (params) => {
+        this.landscapeMarqueeParams = params
     }
 
-    stopMarquee = () => {
-        this.marqueeParams.stopMarquee();
+    stoplandscapeMarquee = () => {
+        this.landscapeMarqueeParams.stopMarquee();
     }
 
-    runMarquee = () => {
-        this.marqueeParams.runMarquee();
+    runlandscapeMarquee = () => {
+        this.landscapeMarqueeParams.runMarquee();
+    }
+    
+    //竖向
+    getVerticalMarquee = (params) => {
+        this.verticalMarqueeParams = params
+    }
+
+    stopVerticalMarquee = () => {
+        this.verticalMarqueeParams.stopMarquee();
+    }
+
+    runVerticalMarquee = () => {
+        this.verticalMarqueeParams.runMarquee();
     }
 
 }

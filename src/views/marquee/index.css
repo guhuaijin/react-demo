@@ -1,4 +1,4 @@
-.box{
+.box-landscape{
     width:100%;
     position: relative;
     height: 50px;
@@ -9,11 +9,27 @@
 }
 
 .botton{
-    font-size: 24px;
+    font-size: 16px;
     line-height: 40px;
     width: 100px;
     background-color:#ccc;
     display: inline-block;
     margin:10px 10px 10px;
     text-align: center;
+}
+
+.box-vertical{
+    width:100%;
+    height: 240px;
+    border:1px solid red;
+    position: relative;
+    font-size: 18px;
+    color:#323232;
+}
+
+.type-title{
+    font-size: 20px;
+    color:#323232;
+    font-weight: bold;
+    padding:10px;
 }
