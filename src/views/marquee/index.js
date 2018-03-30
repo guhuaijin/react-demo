@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Marquee from 'react-marquee'
+import Marquee from 'react-marquee-order'
 import './index.css';
 
 class MarqueePage extends Component {
