@@ -35,6 +35,14 @@ const marquee = (location, cb) => {
 	}, 'marquee')
 }
 
+const scrollMenu = (location, cb) => {
+	require.ensure([], require => {
+		cb(null, require('./views/scrollMenu/index').default)
+	}, 'scrollMenu')
+}
+
+
+
 /**
  *	路由钩子函数，进入相应页面时触发；
  * 	这里可以对用户，做权限管理的判断
@@ -53,6 +61,7 @@ const RouteConfig = (
 			<Route path='home' component={home} />
 			<Route path='antd' getComponent={antd} />
 			<Route path='marquee' getComponent={marquee} />
+			<Route path='scrollMenu' getComponent={scrollMenu} />
 			<Redirect from='*' to='/' />
 		</Route>
 	</Router>
