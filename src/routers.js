@@ -23,11 +23,11 @@ const history = hashHistory;
 // 	},'detail')
 // }
 
-const antd = (location, cb) => {
-	require.ensure([], require => {
-		cb(null, require('./views/antd/index').default)
-	}, 'antd')
-}
+// const antd = (location, cb) => {
+// 	require.ensure([], require => {
+// 		cb(null, require('./views/antd/index').default)
+// 	}, 'antd')
+// }
 
 const marquee = (location, cb) => {
 	require.ensure([], require => {
@@ -59,7 +59,6 @@ const RouteConfig = (
 		<Route path='/' component={Roots} >
 			<IndexRoute component={home} />
 			<Route path='home' component={home} />
-			<Route path='antd' getComponent={antd} />
 			<Route path='marquee' getComponent={marquee} />
 			<Route path='scrollMenu' getComponent={scrollMenu} />
 			<Redirect from='*' to='/' />
